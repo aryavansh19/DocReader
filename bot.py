@@ -78,7 +78,6 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     # Get file information from Telegram
     telegram_file: File = await context.bot.get_file(photo.file_id)
 
-    # Generate a unique file name (Telegram doesn't provide original for photos)
     file_extension = "jpg"  # Default to jpg, Telegram usually converts
     local_file_path = os.path.join(DOWNLOAD_DIR, f"{photo.file_id}.{file_extension}")
 
@@ -95,7 +94,7 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
 
 async def echo_non_document_messages(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Echoes any text message back, if not a document/photo."""
+"
     if update.message.text:
         await update.message.reply_text("I'm designed to process PDFs and images. Please send one!")
     else:
