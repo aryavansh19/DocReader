@@ -75,7 +75,7 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
     await update.message.reply_text("Received an image. Processing...")
 
-    # Get file information from Telegram
+    # Get file information from
     telegram_file: File = await context.bot.get_file(photo.file_id)
 
     file_extension = "jpg"  # Default to jpg,
