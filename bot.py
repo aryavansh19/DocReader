@@ -88,14 +88,7 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         await update.message.reply_text(f"Saved image to: {local_file_path}")
         logger.info(f"Downloaded image: {local_file_path}")
 
-        # --- HERE YOU WILL INTEGRATE YOUR OCR AND AI LOGIC FOR IMAGES ---
-        # For now, just confirm receipt.
-        # In later steps, you'll call functions like:
-        # extracted_text = perform_ocr_on_image(local_file_path) # If text is expected
-        # subject = detect_subject_with_ai(extracted_text or image_analysis_result)
-        # store_document(local_file_path, subject)
-        # await update.message.reply_text(f"Image organized under subject: {subject}")
-        # --- END OF INTEGRATION POINT ---
+-
 
     except Exception as e:
         logger.error(f"Error downloading image {photo.file_id}: {e}")
