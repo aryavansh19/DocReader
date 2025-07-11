@@ -31,7 +31,6 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     chat_id = update.effective_chat.id
 
     if document:
-        # Check if it's a PDF
         if document.mime_type == 'application/pdf':
             file_name = document.file_name
             await update.message.reply_text(f"Received PDF: {file_name}. Processing...")
@@ -39,7 +38,6 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             # Get file information from Telegram
             telegram_file: File = await context.bot.get_file(document.file_id)
 
-            # Define local path to save the file
             local_file_path = os.path.join(DOWNLOAD_DIR, file_name)
 
             try:
