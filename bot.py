@@ -78,7 +78,7 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     # Get file information from Telegram
     telegram_file: File = await context.bot.get_file(photo.file_id)
 
-    file_extension = "jpg"  # Default to jpg, Telegram usually converts
+    file_extension = "jpg"  # Default to jpg,
     local_file_path = os.path.join(DOWNLOAD_DIR, f"{photo.file_id}.{file_extension}")
 
     try:
