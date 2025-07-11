@@ -69,7 +69,7 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
 
 async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Handles incoming photos (images)."""
-    # Telegram sends multiple photo sizes, usually the last one is the largest.
+
     photo = update.message.photo[-1]
     chat_id = update.effective_chat.id
 
