@@ -88,7 +88,6 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         await update.message.reply_text(f"Saved image to: {local_file_path}")
         logger.info(f"Downloaded image: {local_file_path}")
 
--
 
     except Exception as e:
         logger.error(f"Error downloading image {photo.file_id}: {e}")
