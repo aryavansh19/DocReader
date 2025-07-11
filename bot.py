@@ -107,7 +107,6 @@ def main() -> None:
     # Create the Application and pass your bot's token.
     application = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
 
-    # Add handlers for commands
     application.add_handler(CommandHandler("start", start))
 
     # Add handlers for different types of messages
@@ -119,8 +118,6 @@ def main() -> None:
     application.add_handler(
         MessageHandler(filters.TEXT | filters.ATTACHMENT & ~filters.COMMAND, echo_non_document_messages))
 
-    # Run the bot until the user presses Ctrl-C
-    # Using polling for simplicity in development. For production, webhooks are preferred.
     logger.info("Bot is starting... Listening for updates via polling.")
     application.run_polling(allowed_updates=Update.ALL_TYPES)
     logger.info("Bot stopped.")
