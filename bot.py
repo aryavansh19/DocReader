@@ -50,10 +50,7 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
                 # For now, let's just confirm receipt.
                 # In later steps, you'll call functions like:
                 # extracted_text = perform_ocr(local_file_path)
-                # subject = detect_subject_with_ai(extracted_text)
-                # store_document(local_file_path, subject)
-                # await update.message.reply_text(f"PDF organized under subject: {subject}")
-                # --- END OF INTEGRATION POINT ---
+
 
             except Exception as e:
                 logger.error(f"Error downloading PDF {file_name}: {e}")
